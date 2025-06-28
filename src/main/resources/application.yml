@@ -1,0 +1,21 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /EAVola
+spring:
+  jackson:
+    time-zone: Europe/Rome
+  datasource:
+    url: jdbc:mysql://localhost:3306/EAVola
+    username:
+    password:
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+    url:  /v3/api-docs
