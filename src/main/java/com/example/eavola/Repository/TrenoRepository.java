@@ -14,6 +14,6 @@ public interface TrenoRepository extends JpaRepository<Treno, Long> {
 
     @NonNull
     @Query(value = "SELECT * FROM Treni T WHERE T.Modello = :nome AND T.linea = :linea;", nativeQuery = true)
-    Treno getTrenoByModelloAndLinea(@Param("modello") String modello, @Param("linea") String linea);
+    Optional<Treno> getTrenoByModelloAndLinea(@Param("modello") String modello, @Param("linea") String linea);
 
 }

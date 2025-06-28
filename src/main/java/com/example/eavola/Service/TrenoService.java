@@ -25,7 +25,7 @@ public class TrenoService {
     private StazioneService stazioneService;
 
     public TrenoDTO getTrenoByModelloAndLinea(String fermata, String modello) {
-        return trenoMapper.toDto(trenoRepository.getTrenoByModelloAndLinea(modello, String.valueOf(stazioneService.getStazioneDTOByNome(fermata).getNome())));
+        return trenoMapper.toDto(trenoRepository.getTrenoByModelloAndLinea(modello, String.valueOf(stazioneService.getStazioneDTOByNome(fermata).getNome())).orElse(null));
     }
 
 }
