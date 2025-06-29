@@ -17,7 +17,7 @@ public class StazioneService {
     private StazioneMapper stazioneMapper;
 
     public StazioneDTO getStazioneDTOByNome(String nome){
-        return stazioneMapper.toDto(stazioneRepository.getStazioneByNome(nome));
+        return stazioneMapper.toDto(stazioneRepository.getStazioneByNome(nome).orElse(null));
     }
 
 }

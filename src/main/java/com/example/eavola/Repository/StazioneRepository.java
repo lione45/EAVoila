@@ -4,15 +4,18 @@ import com.example.eavola.Model.Linea;
 import com.example.eavola.Model.Stazione;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
-public interface StazioneRepository extends JpaRepository<Stazione, Long> {
+public interface StazioneRepository extends CrudRepository<Stazione, Long> {
 
     @NonNull
-    @Query(value = "SELECT * FROM Stazioni S WHERE S.Nome = :nome;", nativeQuery = true)
-    Stazione getStazioneByNome(@Param("nome") String nome);
+    @Query(value = "SELECT * FROM Stazioni WHERE Nome = :nome", nativeQuery = true)
+    Optional<Stazione> getStazioneByNome(@Param("nome") String nome);
 
 }

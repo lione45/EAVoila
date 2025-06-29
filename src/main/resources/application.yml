@@ -6,7 +6,7 @@ spring:
   jackson:
     time-zone: Europe/Rome
   datasource:
-    url: jdbc:mysql://localhost:3306/EAVola
+    url: jdbc:mysql://localhost:3306/EAVol
     username:
     password:
     driverClassName: com.mysql.cj.jdbc.Driver

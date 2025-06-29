@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class StazioneDTO {
 
-    private Long id;
+    private Integer id;
     private String nome;
     private String citta;
     private Double latitudine;
@@ -14,7 +14,7 @@ public class StazioneDTO {
     public StazioneDTO() {
     }
 
-    public StazioneDTO(Long id, String nome, String citta, Double latitudine, Double longitudine, String attrazioniTuristiche) {
+    public StazioneDTO(Integer id, String nome, String citta, Double latitudine, Double longitudine, String attrazioniTuristiche) {
         this.id = id;
         this.nome = nome;
         this.citta = citta;
@@ -23,11 +23,11 @@ public class StazioneDTO {
         this.attrazioniTuristiche = attrazioniTuristiche;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

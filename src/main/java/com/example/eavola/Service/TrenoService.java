@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.List;
+
 @Service
 public class TrenoService {
 
@@ -24,8 +26,8 @@ public class TrenoService {
     @Autowired
     private StazioneService stazioneService;
 
-    public TrenoDTO getTrenoByModelloAndLinea(String fermata, String modello) {
-        return trenoMapper.toDto(trenoRepository.getTrenoByModelloAndLinea(modello, String.valueOf(stazioneService.getStazioneDTOByNome(fermata).getNome())).orElse(null));
+    public List<TrenoDTO> getTrenoByModelloAndLinea(String fermata, String modello) {
+        return trenoMapper.toDtos(trenoRepository.getTrenoByModelloAndLinea(modello, stazioneService.getStazioneDTOByNome(fermata).getId()).orElse(null));
     }
 
 }

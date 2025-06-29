@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class TrenoDTO {
 
-    private Long id;
+    private Integer id;
     private String modello;
     private Integer capacita;
     private Long idLinea;
@@ -12,18 +12,18 @@ public class TrenoDTO {
     public TrenoDTO() {
     }
 
-    public TrenoDTO(Long id, String modello, Integer capacita, Long idLinea) {
+    public TrenoDTO(Integer id, String modello, Integer capacita, Long idLinea) {
         this.id = id;
         this.modello = modello;
         this.capacita = capacita;
         this.idLinea = idLinea;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
